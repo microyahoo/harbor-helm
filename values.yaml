@@ -187,6 +187,7 @@ ipFamily:
   ipv4:
     enabled: true
 
+# 使用 default storageClass
 # The persistence is enabled by default and a default StorageClass
 # is needed in the k8s cluster to provision volumes dynamically.
 # Specify another StorageClass in the "storageClass" or set "existingClaim"
@@ -212,7 +213,7 @@ persistence:
       storageClass: ""
       subPath: ""
       accessMode: ReadWriteOnce
-      size: 5Gi
+      size: 200Gi
       annotations: {}
     jobservice:
       jobLog:
@@ -352,7 +353,7 @@ updateStrategy:
   type: RollingUpdate
 
 # debug, info, warning, error or fatal
-logLevel: info
+logLevel: debug
 
 # The initial password of Harbor admin. Change it from portal after launching Harbor
 # or give an existing secret for it
